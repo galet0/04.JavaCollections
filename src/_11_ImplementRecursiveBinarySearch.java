@@ -8,11 +8,12 @@ public class _11_ImplementRecursiveBinarySearch {
 
         Scanner scn = new Scanner(System.in);
         int searchedElement = scn.nextInt();
+        scn.nextLine();
         String[] inputLine = scn.nextLine().split(" ");
-        int[] numbers = new int[0];
-        for (int i = 1; i < numbers.length; i++) {
+        int size = inputLine.length;
+        int[] numbers = new int[size];
+        for (int i = 0; i < size; i++) {
             numbers[i] = Integer.parseInt(inputLine[i]);
-            scn.nextInt();
         }
         System.out.println(binarySearch(numbers,searchedElement));
     }
