@@ -1,16 +1,20 @@
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class _11_ImplementRecursiveBinarySearch {
-    public static final int NOT_FOUND = -1;
+
     public static void main(String[] args) {
+
         Scanner scn = new Scanner(System.in);
         int searchedElement = scn.nextInt();
-        String[] inputLine = scn.next().split(" ");
-        int[] numbers = new int[inputLine.length];
-        int index = binarySearch(numbers,searchedElement);
-        System.out.println(index);
+        String[] inputLine = scn.nextLine().split(" ");
+        int[] numbers = new int[0];
+        for (int i = 1; i < numbers.length; i++) {
+            numbers[i] = Integer.parseInt(inputLine[i]);
+            scn.nextInt();
+        }
+        System.out.println(binarySearch(numbers,searchedElement));
     }
 
     public static int binarySearch(int[] a, int target) {
@@ -31,4 +35,5 @@ public class _11_ImplementRecursiveBinarySearch {
             return binarySearch(a, middle + 1, end, target);
         }
     }
+
 }
